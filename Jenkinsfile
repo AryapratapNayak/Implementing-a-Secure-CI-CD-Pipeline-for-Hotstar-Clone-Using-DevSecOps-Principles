@@ -1,4 +1,4 @@
-﻿pipeline {
+pipeline {
     agent {
         label 'hotstar-build-agent-2'
     }
