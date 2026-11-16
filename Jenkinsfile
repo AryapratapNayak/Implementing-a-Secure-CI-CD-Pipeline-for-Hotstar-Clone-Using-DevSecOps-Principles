@@ -1,3 +1,4 @@
+
 pipeline {
     agent {
         label 'hotstar-build-agent-2'
@@ -35,6 +36,23 @@ pipeline {
             }
         }
 
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    script {
+                        def scannerHome = tool 'SonarScanner'
+                        sh """
+                            "${scannerHome}/bin/sonar-scanner" \
+                            -Dsonar.projectKey=Hotstar-DevSecOps \
+                            -Dsonar.projectName=Hotstar-DevSecOps \
+                            -Dsonar.sources=src \
+                            -Dsonar.sourceEncoding=UTF-8
+                        """
+                    }
+                }
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t hotstar-clone:${BUILD_NUMBER} -t hotstar-clone:latest .'
@@ -44,7 +62,7 @@ pipeline {
 
     post {
         success {
-            echo 'SUCCESS: React build and Docker image creation completed.'
+            echo 'SUCCESS: React build, SonarQube analysis and Docker image creation completed.'
         }
         failure {
             echo 'FAILED: Check the stage logs above.'
