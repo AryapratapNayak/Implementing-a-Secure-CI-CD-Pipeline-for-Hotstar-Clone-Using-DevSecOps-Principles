@@ -46,7 +46,8 @@ pipeline {
                             -Dsonar.projectKey=Hotstar-DevSecOps \
                             -Dsonar.projectName=Hotstar-DevSecOps \
                             -Dsonar.sources=src \
-                            -Dsonar.sourceEncoding=UTF-8
+                            -Dsonar.sourceEncoding=UTF-8 \
+                            -Dsonar.scanner.skipNodeProvisioning=true
                         """
                     }
                 }
