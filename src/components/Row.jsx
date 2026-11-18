@@ -17,7 +17,7 @@ function Row({ title, fetchUrl }) {
       }
     }
 
-    fetchData()
+    void fetchData()
   }, [fetchUrl])
 
   return (

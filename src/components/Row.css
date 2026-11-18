@@ -28,7 +28,7 @@
     right: 0;
     bottom: 0;
     visibility: hidden;
-    transition-delay: ease-in .2s;
+    transition: visibility .2s ease-in;
 
 
     z-index: 1;
