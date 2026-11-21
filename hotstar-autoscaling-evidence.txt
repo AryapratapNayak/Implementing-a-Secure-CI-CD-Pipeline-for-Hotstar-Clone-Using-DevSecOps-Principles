@@ -1,0 +1,17 @@
+﻿NAME                                          REFERENCE            TARGETS        MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/hotstar   Deployment/hotstar   cpu: 99%/50%   2         5         5          6m21s
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hotstar   5/5     5            5           2d
+
+NAME                         READY   STATUS    RESTARTS   AGE
+pod/hotstar-5965b6c7-57m9l   1/1     Running   0          6m54s
+pod/hotstar-5965b6c7-6qq7v   1/1     Running   0          111s
+pod/hotstar-5965b6c7-hs24g   1/1     Running   0          96s
+pod/hotstar-5965b6c7-mfvzt   1/1     Running   0          6m43s
+pod/hotstar-5965b6c7-zrfjv   1/1     Running   0          111s
+pod/hotstar-load             1/1     Running   0          5m30s
+pod/hotstar-load-2           1/1     Running   0          2m7s
+pod/hotstar-load-3           1/1     Running   0          2m7s
+pod/hotstar-load-4           1/1     Running   0          2m7s
+pod/hotstar-load-5           1/1     Running   0          2m7s
