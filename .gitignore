@@ -7,3 +7,9 @@ coverage/
 .DS_Store
 *.log
 trivy-report*.json
+
+HotStar-Clone/
+
+.terraform/
+*.tfstate
+*.tfstate.*
